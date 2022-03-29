@@ -47,11 +47,11 @@ class citasReactivaServiceImplTest
 
 
 
-    @Test
-    void obtenerCitas()throws Exception
-    {
-        icitasReactivaService.ge
-    }
+//    @Test
+//    void obtenerCitas()throws Exception
+//    {
+//        icitasReactivaService.ge
+//    }
 
 //    @Test
 //    void test1()
