@@ -137,4 +137,34 @@ public class citasDTOReactiva {
     //private Date sendedDate = new Date();
 
 
+    public citasDTOReactiva(String id, String idPaciente, String nombrePaciente, String apellidosPaciente, String nombreMedico, String apellidosMedico, String fechaReservaCita, String horaReservaCita, String estadoReservaCita, List<String> padecimientos, List<String> tratamientos) {
+        this.id = id;
+        this.idPaciente = idPaciente;
+        this.nombrePaciente = nombrePaciente;
+        this.apellidosPaciente = apellidosPaciente;
+        this.nombreMedico = nombreMedico;
+        this.apellidosMedico = apellidosMedico;
+        this.fechaReservaCita = fechaReservaCita;
+        this.horaReservaCita = horaReservaCita;
+        this.estadoReservaCita = estadoReservaCita;
+        this.padecimientos = padecimientos;
+        this.tratamientos = tratamientos;
+    }
+
+    public citasDTOReactiva(String id, String idPaciente, String nombrePaciente, String apellidosPaciente, String nombreMedico, String apellidosMedico, String fechaReservaCita, String horaReservaCita, String estadoReservaCita) {
+        this.id = id;
+        this.idPaciente = idPaciente;
+        this.nombrePaciente = nombrePaciente;
+        this.apellidosPaciente = apellidosPaciente;
+        this.nombreMedico = nombreMedico;
+        this.apellidosMedico = apellidosMedico;
+        this.fechaReservaCita = fechaReservaCita;
+        this.horaReservaCita = horaReservaCita;
+        this.estadoReservaCita = estadoReservaCita;
+    }
+
+    public citasDTOReactiva() {
+    }
+
+
 }
