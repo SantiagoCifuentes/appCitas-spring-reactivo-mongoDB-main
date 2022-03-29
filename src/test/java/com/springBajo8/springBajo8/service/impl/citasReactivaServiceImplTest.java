@@ -5,6 +5,7 @@ import com.springBajo8.springBajo8.service.IcitasReactivaService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -28,48 +29,28 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
+
+@WebFluxTest
 @SpringBootTest
 @AutoConfigureMockMvc
 class citasReactivaServiceImplTest
 {
 
-    @MockBean
-    IcitasReactivaService icitasReactivaServicee;
-
-//    @Autowired
-//    IcitasReactivaService icitasReactivaService;
+//    @MockBean
+//    IcitasReactivaService icitasReactivaServicee;
 
     @Autowired
-  private MockMvc mockMvc;
+    IcitasReactivaService icitasReactivaService;
 
-
+//    @Autowired
+//  private MockMvc mockMvc;
 
 
 
     @Test
     void obtenerCitas()throws Exception
     {
-        citasDTOReactiva dtoReactiva = new citasDTOReactiva("1","1","Santiago","Cifuentes","Sofia","Gonzalez","22-03-31","1313","En reserva");
-
-        Flux<citasDTOReactiva> citasDTOReactivas = new Flux<citasDTOReactiva>() {
-            @Override
-            public void subscribe(CoreSubscriber<? super citasDTOReactiva> coreSubscriber) {
-
-            }
-        };
-
-        citasDTOReactivas.collectList();
-//        citasDTOReactivas.add(new citasDTOReactiva("1","1","Santiago","Cifuentes","Sofia","Gonzalez","22-03-31","1313","En reserva"));
-//        citasDTOReactivas.add(new citasDTOReactiva("2","2","Santiago","Cifuentes","Sofia","Gonzalez","22-03-31","1313","En reserva"));
-        //Flux<citasDTOReactiva> citasDTOReactivaFlux =  icitasReactivaServicee.findAll();
-
-        doReturn(citasDTOReactivas).when(icitasReactivaServicee).findAll();
-
-        mockMvc.perform(get( "/citasReactivas"))
-                .andExpect(status().isOk())
-
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$",hasSize(0)));
+        icitasReactivaService.ge
     }
 
 //    @Test
@@ -89,10 +70,10 @@ class citasReactivaServiceImplTest
 //    }
 //
 //
-//    @Test
-//    @DisplayName("GET/biblioteca/recurso/{id}")
-//    void citaCreada() throws Exception {
-//
+    @Test
+    @DisplayName("GET/biblioteca/recurso/{id}")
+    void citaCreada() throws Exception {
+
 //
 //        citasDTOReactiva citastoReturn= new citasDTOReactiva("1","1","Santiago","Cifuentes","Sofia","Gonzalez","22-03-31","1313","En reserva");
 //        doReturn(Optional.of(citastoReturn)).when(icitasReactivaService).findAll();
@@ -110,5 +91,5 @@ class citasReactivaServiceImplTest
 ////    }
 
 
-}
+}}
 //}
